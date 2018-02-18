@@ -1,0 +1,16 @@
+{
+  "name": "WeEat_2_0",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^3.2.2",
+    "babel-preset-react": "^6.24.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
