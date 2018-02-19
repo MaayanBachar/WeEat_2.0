@@ -21,5 +21,11 @@ class Restaurant < ApplicationRecord
   }
 
 
-  
+
+
+
+
+
+
+
 end
