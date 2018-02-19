@@ -20,12 +20,4 @@ class Restaurant < ApplicationRecord
       message: 'must be a URL for GIF, JPG or PNG image.'
   }
 
-
-
-
-
-
-
-
-
 end
