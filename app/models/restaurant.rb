@@ -20,6 +20,7 @@ class Restaurant < ApplicationRecord
   # The existence of reviews is dependent on the existence of the restaurant.
   # has_many :reviews, dependent:  :destroy can be deleted
   has_many :reviews
+  belongs_to :cuisine
 
   # Validates that the text fields all contain something
   validates :name, :cuisine, presence: true
@@ -56,12 +57,6 @@ class Restaurant < ApplicationRecord
     else
       0
     end
-
-
-
   end
-
-
-
 
 end

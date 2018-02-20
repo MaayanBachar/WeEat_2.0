@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :cuisines
   # change (wasn't comment)
   # resources :reviews
   # resources :restaurants
