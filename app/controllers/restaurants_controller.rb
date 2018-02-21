@@ -5,8 +5,6 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.order(:name)
-    #@restaurants = Restaurant.all
-    # return @restaurant
   end
 
   # GET /restaurants/1
@@ -26,7 +24,10 @@ class RestaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
-    @restaurant = Restaurant.new(restaurant_params)
+    cuisine = Cuisine.find_by_name(restaurant_params[:cuisine])
+    updated_restaurant_params = restaurant_params
+    updated_restaurant_params[:cuisine] = cuisine
+    @restaurant = Restaurant.new(updated_restaurant_params)
 
     respond_to do |format|
       if @restaurant.save
@@ -71,6 +72,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :cuisine, :rating, :tenbis, :address, :max_delivery_time, :image_url)
+      params.require(:restaurant).permit(:name, :cuisine, :tenbis, :address, :max_delivery_time, :image_url)
     end
 end

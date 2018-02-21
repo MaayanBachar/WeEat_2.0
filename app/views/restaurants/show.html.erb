@@ -7,7 +7,12 @@
 
 <p>
   <strong>Cuisine:</strong>
-  <%= @restaurant.cuisine %>
+  <%= @restaurant.cuisine.name %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @restaurant.get_rating %>
 </p>
 
 <p>

@@ -29,8 +29,7 @@
         <td><%= link_to 'Show', restaurant %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <!--Add a review: -->
-        <td><%= button_to 'Add a review', restaurant_reviews_path(restaurant_id: restaurant) %></td>
+        <td><%= link_to 'Add a review', new_restaurant_review_url(restaurant_id: restaurant) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -14,11 +14,7 @@
 class Review < ApplicationRecord
   belongs_to :restaurant
 
-  # change (added)
   validates :reviewer_name, :presence => true
   validates :rating, :presence => true
   validates :comment, :presence => true
-
-
-
 end
