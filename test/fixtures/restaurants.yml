@@ -1,0 +1,34 @@
+# == Schema Information
+#
+# Table name: restaurants
+#
+#  id                :integer          not null, primary key
+#  name              :string
+#  address           :string
+#  max_delivery_time :integer
+#  image_url         :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  tenbis            :boolean
+#  cuisine_id        :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  cuisine: MyString
+  rating: 1
+  tenbis: 1
+  address: MyString
+  max_delivery_time: 1
+  image_url: MyString
+
+two:
+  name: MyString
+  cuisine: MyString
+  rating: 1
+  tenbis: 1
+  address: MyString
+  max_delivery_time: 1
+  image_url: MyString
