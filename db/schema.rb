@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220171947) do
+ActiveRecord::Schema.define(version: 20180222133734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,23 +23,27 @@ ActiveRecord::Schema.define(version: 20180220171947) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
+    t.string "name", null: false
+    t.string "address", null: false
     t.integer "max_delivery_time", limit: 2
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "tenbis"
+    t.boolean "tenbis", null: false
     t.bigint "cuisine_id"
+    t.index ["cuisine_id"], name: "index_restaurants_on_cuisine_id"
+    t.index ["max_delivery_time"], name: "index_restaurants_on_max_delivery_time"
+    t.index ["tenbis"], name: "index_restaurants_on_tenbis"
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.bigint "restaurant_id"
+    t.bigint "restaurant_id", null: false
     t.string "reviewer_name"
-    t.integer "rating"
+    t.integer "rating", null: false
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["rating"], name: "index_reviews_on_rating"
     t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
   end
 

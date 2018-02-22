@@ -18,19 +18,18 @@ class Restaurant < ApplicationRecord
   # A restaurant has many associated reviews.
   # Each review contains a reference to its restaurant's ID
   # The existence of reviews is dependent on the existence of the restaurant.
-  # has_many :reviews, dependent:  :destroy can be deleted
   has_many :reviews
   belongs_to :cuisine
 
   # Validates that the text fields all contain something
-  validates :name, :cuisine, presence: true
-  validates :tenbis, :address, :max_delivery_time, presence: true
+  validates_presence_of :name,
+                        :cuisine,
+                        :tenbis,
+                        :address,
+                        :max_delivery_time
 
   # Validates that the maximum delivery time is between 0-100 minutes.
   validates :max_delivery_time, numericality: {greater_than_or_equal_to: 0}
-
-  # Make sure there are no duplicates in rastaurant names
-  #validates :name, uniqueness: true
 
   # Validates image format
   validates :image_url, allow_blank: true, format: {
@@ -39,15 +38,6 @@ class Restaurant < ApplicationRecord
   }
 
   def get_rating
-    total_rating = 0
-
-    if reviews.present?
-      reviews.each do |review|
-        total_rating += review.rating
-      end
-      total_rating / reviews.size
-    else
-      "-" # Zero reviews
-    end
+    reviews.size == 0 ? "-" : reviews.average(:rating).round
   end
 end
