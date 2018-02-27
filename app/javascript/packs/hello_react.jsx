@@ -5,7 +5,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import Body from './Body'
+import App from './App'
 import Restaurants from './Restaurants.jsx'
 
 const Hello = props => (
@@ -22,7 +22,7 @@ Hello.propTypes = {
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Body />,
+    <App />,
       document.body.appendChild(document.createElement('div')),
   )
 })
