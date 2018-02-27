@@ -1,15 +1,21 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
+
+  # self.default_serializer = RestaurantSerializer
+
+
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.order(:name)
+     @restaurants = Restaurant.order(:name)
+     render json: @restaurants, each_serializer: RestaurantSerializer
   end
 
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+     # render json: @restaurants.to_json(methods: :get_rating)
   end
 
   # GET /restaurants/new
@@ -72,6 +78,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :cuisine, :tenbis, :address, :max_delivery_time, :image_url)
+      params.require(:restaurant).permit(:name, :cuisine, :tenbis, :address, :max_delivery_time)
     end
 end

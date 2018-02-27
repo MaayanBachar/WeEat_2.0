@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222133734) do
+ActiveRecord::Schema.define(version: 20180227071127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20180222133734) do
     t.string "name", null: false
     t.string "address", null: false
     t.integer "max_delivery_time", limit: 2
-    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "tenbis", null: false

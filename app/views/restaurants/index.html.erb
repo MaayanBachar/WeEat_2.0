@@ -11,7 +11,6 @@
       <th>Address</th>
       <th>Max delivery time</th>
       <th>Rating</th>
-      <th>Image url</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,7 +24,6 @@
         <td><%= restaurant.address %></td>
         <td><%= restaurant.max_delivery_time %></td>
         <td><%= restaurant.get_rating %></td>
-        <td><%= restaurant.image_url %></td>
         <td><%= link_to 'Show', restaurant %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>

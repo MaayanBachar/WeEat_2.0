@@ -6,7 +6,6 @@
 #  name              :string
 #  address           :string
 #  max_delivery_time :integer
-#  image_url         :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  tenbis            :boolean
@@ -32,10 +31,10 @@ class Restaurant < ApplicationRecord
   validates :max_delivery_time, numericality: {greater_than_or_equal_to: 0}
 
   # Validates image format
-  validates :image_url, allow_blank: true, format: {
-      with: %r{\.(gif|jpg|png)\Z}i,
-      message: 'must be a URL for GIF, JPG or PNG image.'
-  }
+  # validates :image_url, allow_blank: true, format: {
+  #     with: %r{\.(gif|jpg|png)\Z}i,
+  #     message: 'must be a URL for GIF, JPG or PNG image.'
+  # }
 
   def get_rating
     reviews.size == 0 ? "-" : reviews.average(:rating).round
