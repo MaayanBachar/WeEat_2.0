@@ -30,16 +30,24 @@ class RestaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
-    cuisine = Cuisine.find_by_name(restaurant_params[:cuisine])
+
+
+    puts restaurant_params
+    cuisine = Cuisine.find(restaurant_params[:cuisine])
+        # Cuisine.find_by_name(restaurant_params[:cuisine])
     updated_restaurant_params = restaurant_params
     updated_restaurant_params[:cuisine] = cuisine
     @restaurant = Restaurant.new(updated_restaurant_params)
+    puts "Created new restaurant"
 
     respond_to do |format|
       if @restaurant.save
+        puts "Saved restaurant"
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
         format.json { render :show, status: :created, location: @restaurant }
       else
+        puts "Didn't save restaurant"
+        puts @restaurant.errors
         format.html { render :new }
         format.json { render json: @restaurant.errors, status: :unprocessable_entity }
       end

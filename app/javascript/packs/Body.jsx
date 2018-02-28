@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types'
 import Restaurants from './Restaurants'
+import Map from './Map'
 
 class Body extends React.Component {
 
@@ -21,7 +22,8 @@ class Body extends React.Component {
     render() {
         return (
             <div className="body">
-                <h1>Body!!!!!</h1>
+                <h3>Body</h3>
+                <Map />
                 { this.state.restaurants &&
                 <div>
                     <Restaurants restaurants = {this.state.restaurants}/>

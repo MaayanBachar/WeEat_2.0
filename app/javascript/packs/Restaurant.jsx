@@ -21,15 +21,10 @@ class Restaurant extends React.Component {
                 <div className="cuisine_font">{restaurant.cuisine.logo}</div>
 
                 <div>Rating: {restaurant.get_rating}</div>
-                <a href="https://www.w3schools.com">Visit W3Schools.com!</a>
 
             </div>
         );
     }
 }
-
-
-
-
 
 export default Restaurant

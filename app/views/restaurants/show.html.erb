@@ -30,11 +30,6 @@
   <%= @restaurant.max_delivery_time %>
 </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @restaurant.image_url %>
-</p>
-
 <%= link_to 'Reviews', restaurant_reviews_path(@restaurant)%> |
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

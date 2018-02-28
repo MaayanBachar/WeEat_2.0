@@ -4,13 +4,28 @@ import MyHeader from './MyHeader'
 
 class App extends React.Component {
 
+
+    constructor() {
+        super();
+        this.state = {
+            cuisines: []
+        };
+    }
+
+    componentWillMount() {
+        fetch('http://localhost:3000/cuisines.json')
+            .then(response => response.json())
+            .then((cuisines) => this.setState({cuisines: cuisines}));
+    }
+
     render() {
         return (
             <div className="app">
-                <h1>Hi from App!!!</h1>
+                { this.state.cuisines &&
                 <div>
-                    <MyHeader />
+                    <MyHeader cuisines = {this.state.cuisines}/>
                 </div>
+                }
                 <div>
                     <Body />
                 </div>

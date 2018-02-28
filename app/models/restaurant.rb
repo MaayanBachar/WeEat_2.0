@@ -14,6 +14,14 @@
 
 class Restaurant < ApplicationRecord
 
+  # before_validation :init_Tenbis
+  #
+  # def init_Tenbis
+  #   puts "here"
+  #   (tenbis != true) ? self.tenbis = false : self.tenbis
+  # end
+
+
   # A restaurant has many associated reviews.
   # Each review contains a reference to its restaurant's ID
   # The existence of reviews is dependent on the existence of the restaurant.
@@ -23,18 +31,14 @@ class Restaurant < ApplicationRecord
   # Validates that the text fields all contain something
   validates_presence_of :name,
                         :cuisine,
-                        :tenbis,
                         :address,
                         :max_delivery_time
+
+  validates :tenbis, inclusion: [true, false]
 
   # Validates that the maximum delivery time is between 0-100 minutes.
   validates :max_delivery_time, numericality: {greater_than_or_equal_to: 0}
 
-  # Validates image format
-  # validates :image_url, allow_blank: true, format: {
-  #     with: %r{\.(gif|jpg|png)\Z}i,
-  #     message: 'must be a URL for GIF, JPG or PNG image.'
-  # }
 
   def get_rating
     reviews.size == 0 ? "-" : reviews.average(:rating).round
