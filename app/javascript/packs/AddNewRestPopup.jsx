@@ -58,7 +58,6 @@ class AddNewRestPopup extends React.Component {
         }).then(function(response) {
             console.log("success!!!");
             console.log(response.status);
-            // return response.json();
         });
     }
 

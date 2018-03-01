@@ -12,10 +12,12 @@ class Body extends React.Component {
         this.state = {
             restaurants: [],
             filterDeliveryTime: null,
-            filterCuisine: null
+            filterCuisine: null,
+            filterMinimalRating: null
         };
         this.handleChangeDeliveryTime = this.handleChangeDeliveryTime.bind(this);
         this.handleChangeCuisine = this.handleChangeCuisine.bind(this);
+        this.handleChangeMinimalRating = this.handleChangeMinimalRating.bind(this);
     }
 
     componentWillMount() {
@@ -32,6 +34,10 @@ class Body extends React.Component {
         this.setState({filterCuisine: val});
     }
 
+    handleChangeMinimalRating(val) {
+        this.setState({filterMinimalRating: val});
+    }
+
 
 
     render() {
@@ -45,9 +51,9 @@ class Body extends React.Component {
             filteredRestList = filteredRestList.filter(restaurant => restaurant.cuisine.id == this.state.filterCuisine)
         }
 
-
-
-
+        if (this.state.filterMinimalRating) {
+            filteredRestList = filteredRestList.filter(restaurant => restaurant.get_rating >= this.state.filterMinimalRating)
+        }
 
         return (
             <div className="body">
@@ -57,6 +63,7 @@ class Body extends React.Component {
                     <Filters cuisines = {this.props.cuisines}
                              onChangeDeliveryTime={this.handleChangeDeliveryTime}
                              onChangeCuisine={this.handleChangeCuisine}
+                             onChangeMinimalRating={this.handleChangeMinimalRating}
                     />
                 </div>
 

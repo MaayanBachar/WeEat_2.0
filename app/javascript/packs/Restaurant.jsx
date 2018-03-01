@@ -21,7 +21,6 @@ class Restaurant extends React.Component {
                 <div className="cuisine_font">{restaurant.cuisine.logo}</div>
 
                 <div>Rating: {restaurant.get_rating}</div>
-
             </div>
         );
     }

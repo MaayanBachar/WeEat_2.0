@@ -7,14 +7,12 @@ class Filters extends React.Component {
         super();
         this.state = {
             maxDeliveryTime: "120",
-            cuisine:""
+            cuisine:"",
+            minimalRating: ""
         };
     }
-    
+
     render() {
-        console.log(this.props.cuisines)
-
-
         return (
             <div className="filters">
                 <h4>
@@ -45,6 +43,7 @@ class Filters extends React.Component {
                             this.setState({maxDeliveryTime: e.target.value});
                             this.props.onChangeDeliveryTime(e.target.value);
                         }}>
+                            <option value="" defaultValue>Filter by cuisine</option>
                             <option value="10">10</option>
                             <option value="20">20</option>
                             <option value="30">30</option>
@@ -60,9 +59,26 @@ class Filters extends React.Component {
                         </select>
                     </div>
                 </div>
+
+
+                <br/>
+                <div className="minimal_rating_filter">
+                    <div className="col-xs-12 col-sm-10">
+                        Minimal rating:
+                        <select id="restaurants_minimalRating" value={this.state.minimalRating} className="custom-select col-xs-12 col-sm-10" onChange={(e) => {
+                            this.setState({minimalRating: e.target.value});
+                            this.props.onChangeMinimalRating(e.target.value);
+                        }}>
+                            <option value="" defaultValue>Filter by minimal rating</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+
             </div>
-
-
+            
         );
     }
 }
