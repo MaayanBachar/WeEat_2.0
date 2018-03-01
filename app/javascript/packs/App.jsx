@@ -9,6 +9,7 @@ class App extends React.Component {
         super();
         this.state = {
             cuisines: []
+
         };
     }
 
@@ -19,6 +20,7 @@ class App extends React.Component {
     }
 
     render() {
+        console.log(this.props.cuisines)
         return (
             <div className="app">
                 { this.state.cuisines &&
@@ -27,7 +29,7 @@ class App extends React.Component {
                 </div>
                 }
                 <div>
-                    <Body />
+                    <Body cuisines = {this.state.cuisines}/>
                 </div>
             </div>
         );
@@ -35,3 +37,5 @@ class App extends React.Component {
 }
 
 export default App
+
+

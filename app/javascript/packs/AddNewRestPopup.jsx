@@ -20,7 +20,6 @@ class AddNewRestPopup extends React.Component {
     updateChange(e) {
         const event_id = e.target.id;
         const event_value = e.target.value;
-        // const event_key = e.target.key;
 
         if (event_id === "restaurant_name") {
             this.setState({name: event_value});
@@ -40,10 +39,7 @@ class AddNewRestPopup extends React.Component {
     }
 
     newRestaurantSubmit(e) {
-        //e.preventDefault();
-
         console.log("rest cuisine: " + this.state.cuisine);
-
 
         fetch('/restaurants', {
             method: 'post',
@@ -64,27 +60,6 @@ class AddNewRestPopup extends React.Component {
             console.log(response.status);
             // return response.json();
         });
-
-
-        // $.ajax({
-        //     type: 'POST',
-        //     url: '/restaurants',
-        //     data: {
-        //         restaurant: {
-        //             name: this.state.name,
-        //             cuisine: this.state.cuisine,
-        //             address: this.state.address,
-        //             max_delivery_time: this.state.max_delivery_time,
-        //             tenbis: this.state.tenbis
-        //         },
-        //     },
-        // })
-        //     .done(function(data) {
-        //         console.log("success!!!");
-        //     })
-        //     .fail(function(error) {
-        //         console.log('failed to register' + error);
-        //     });
     }
 
     render() {
