@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types'
 
-
 class Restaurant extends React.Component {
-
 
     render() {
         const {restaurant} = this.props;
@@ -19,11 +17,27 @@ class Restaurant extends React.Component {
                 <div>Address: {restaurant.address}</div>
                 {tenbis}
                 <div className="cuisine_font">{restaurant.cuisine.logo}</div>
-
-                <div>Rating: {restaurant.get_rating}</div>
+                <Stars val={restaurant.get_rating}/>
             </div>
         );
     }
+}
+
+function Stars(numStars) {
+    var stars = [];
+    var numOfStars = numStars.val;
+
+    for (var i = 0; i < numOfStars; i++) {
+        stars.push(
+            <i key={i} className="fas fa-star"></i>
+        )
+    }
+
+    return (
+        <div>
+            {stars}
+        </div>
+    )
 }
 
 export default Restaurant

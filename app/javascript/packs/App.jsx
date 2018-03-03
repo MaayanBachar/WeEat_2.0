@@ -4,7 +4,6 @@ import MyHeader from './MyHeader'
 
 class App extends React.Component {
 
-
     constructor() {
         super();
         this.state = {
@@ -24,13 +23,9 @@ class App extends React.Component {
         return (
             <div className="app">
                 { this.state.cuisines &&
-                <div>
                     <MyHeader cuisines = {this.state.cuisines}/>
-                </div>
                 }
-                <div>
-                    <Body cuisines = {this.state.cuisines}/>
-                </div>
+                <Body cuisines = {this.state.cuisines}/>
             </div>
         );
     }

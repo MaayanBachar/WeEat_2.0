@@ -1,0 +1,15 @@
+
+.my_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(/assets/rest.jpg);
+  padding: 7em;
+}
+
+.header_text {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

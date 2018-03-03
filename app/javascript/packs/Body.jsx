@@ -38,8 +38,6 @@ class Body extends React.Component {
         this.setState({filterMinimalRating: val});
     }
 
-
-
     render() {
         let filteredRestList = this.state.restaurants;
 
@@ -57,22 +55,24 @@ class Body extends React.Component {
 
         return (
             <div className="body">
-                <h3>Body</h3>
                 <div>
-                    <div>Max delivery time: {this.state.max_delivery_time}</div>
                     <Filters cuisines = {this.props.cuisines}
                              onChangeDeliveryTime={this.handleChangeDeliveryTime}
                              onChangeCuisine={this.handleChangeCuisine}
                              onChangeMinimalRating={this.handleChangeMinimalRating}
                     />
-                </div>
 
-                <Map />
-                { this.state.restaurants &&
-                    <div>
+                </div>
+                <div className="map_and_rests">
+                    <div className="restaurants">
+                        { this.state.restaurants &&
                         <Restaurants restaurants = {filteredRestList}/>
+                        }
                     </div>
-                }
+                    <div className="map">
+                        <Map/>
+                    </div>
+                </div>
             </div>
         );
     }

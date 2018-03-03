@@ -1,0 +1,21 @@
+.body {
+  background-color: floralwhite;
+}
+
+.map_and_rests {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.restaurants {
+  text-align: center;
+  width: 40%;
+}
+
+.map {
+  display: flex;
+  align-items: end;
+  width: 60%;
+  background-color: #DADADA;
+}

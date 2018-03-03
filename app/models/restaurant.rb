@@ -41,6 +41,6 @@ class Restaurant < ApplicationRecord
 
 
   def get_rating
-    reviews.size == 0 ? "-" : reviews.average(:rating).round
+    reviews.size == 0 ? -1 : reviews.average(:rating).round
   end
 end

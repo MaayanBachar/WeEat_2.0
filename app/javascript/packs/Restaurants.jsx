@@ -7,12 +7,12 @@ class Restaurants extends React.Component {
 
     render() {
         return (
-            <div className="restaurants">
-                <h1>Restaurants list:</h1>
+            <div>
                 { this.props.restaurants &&
-                    <div>
+                    <div className="rest">
                         {this.props.restaurants.map(function (restaurant) {
                             return <Restaurant key={restaurant.id} restaurant={restaurant}/>
+
                         })}
                     </div>
                 }
