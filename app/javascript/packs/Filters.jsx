@@ -15,12 +15,12 @@ class Filters extends React.Component {
     render() {
         return (
             <div className="filters">
-                <div className="subtitle">Filters:</div>
+                <div className="subtitle">Filter by...</div>
 
                 <div className="all_filters">
                     <div className="filter">
                         <div className="col-xs-12 col-sm-10">
-                            Filter by cuisine:
+                            Cuisine:
                             <select id="restaurants_cuisine" value={this.state.cuisine} className="custom-select col-xs-12 col-sm-10" onChange={(e) => {
                                 this.setState({cuisine: e.target.value});
                                 this.props.onChangeCuisine(e.target.value);

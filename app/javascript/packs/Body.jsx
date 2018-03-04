@@ -55,14 +55,11 @@ class Body extends React.Component {
 
         return (
             <div className="body">
-                <div>
-                    <Filters cuisines = {this.props.cuisines}
-                             onChangeDeliveryTime={this.handleChangeDeliveryTime}
-                             onChangeCuisine={this.handleChangeCuisine}
-                             onChangeMinimalRating={this.handleChangeMinimalRating}
-                    />
-
-                </div>
+                <Filters cuisines = {this.props.cuisines}
+                         onChangeDeliveryTime={this.handleChangeDeliveryTime}
+                         onChangeCuisine={this.handleChangeCuisine}
+                         onChangeMinimalRating={this.handleChangeMinimalRating}
+                />
                 <div className="map_and_rests">
                     <div className="restaurants">
                         { this.state.restaurants &&
