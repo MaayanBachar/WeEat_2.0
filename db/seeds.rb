@@ -52,14 +52,14 @@ Restaurant.create!(
 
 Review.create!(
     reviewer_name: 'Avishai',
-    restaurant.id = rest_arome.id,
+    restaurant: rest_arome,
     rating: 2,
     comment: "nice..."
 )
 
 Review.create!(
     reviewer_name: 'Rona',
-    restaurant.id = rest_herzog.id,
+    restaurant: rest_herzog,
     rating: 3,
     comment: "great..."
 )
