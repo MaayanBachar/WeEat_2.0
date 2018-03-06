@@ -17,11 +17,11 @@
 
 @font-face {
     font-family: 'ef_cuisinesregular';
-    src: asset_url('efcuisines-regular-webfont.eot');
-    src: asset_url('efcuisines-regular-webfont.eot?#iefix') format('embedded-opentype'),
-    asset_url('efcuisines-regular-webfont.woff') format('woff'),
-    asset_url('efcuisines-regular-webfont.ttf') format('truetype'),
-    asset_url('efcuisines-regular-webfont.svg#webfont') format('svg');
+    src: url('efcuisines-regular-webfont.eot');
+    src: url('efcuisines-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('efcuisines-regular-webfont.woff') format('woff'),
+    url('efcuisines-regular-webfont.ttf') format('truetype'),
+    url('efcuisines-regular-webfont.svg#webfont') format('svg');
 }
 
 .cuisine_font {
