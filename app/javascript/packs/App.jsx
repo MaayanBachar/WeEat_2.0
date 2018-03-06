@@ -21,7 +21,8 @@ class App extends React.Component {
 
         fetch('/cuisines.json')
             .then(response => response.json())
-            .then((cuisines) => this.setState({cuisines: cuisines}));
+            .then((cuisines) => this.setState({cuisines: cuisines}))
+            .catch((error) => console.log("Failed cuisines request: " + error));
     }
 
     render() {
