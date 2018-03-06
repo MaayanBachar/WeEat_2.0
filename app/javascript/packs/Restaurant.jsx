@@ -6,17 +6,14 @@ class Restaurant extends React.Component {
 
     render() {
         const {restaurant} = this.props;
-        let tenbis = "";
-        if (restaurant.tenbis) {
-            tenbis = <img src="../../assets/tenbis_img.jpg" height="40" width="40"/>
-            // tenbis = <div class="tenbis_logo"></div>
-        }
         return (
             <div className="restaurant">
                 <h4>{restaurant.name}</h4>
                 <div>Max delivery time: {restaurant.max_delivery_time}</div>
                 <div>Address: {restaurant.address}</div>
-                { restaurant.tenbis && <img src="../../assets/tenbis_img.jpg" height="40" width="40"/> }
+                {restaurant.tenbis && restaurant.tenbis && <div className="tenbis_img" ></div> }
+
+
                 <div className="cuisine_font">{restaurant.cuisine.logo}</div>
                 <Stars val={restaurant.get_rating}/>
             </div>
