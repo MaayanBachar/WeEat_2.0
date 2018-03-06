@@ -7,18 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-cuisine_breakfast = Cuisine.create!(name: 'Breakfast', icon: '4')
-cuisine_salads = Cuisine.create!(name: 'Salads', icon: '5')
-cuisine_mexican = Cuisine.create!(name: 'Mexican', icon: '8')
-cuisine_hamburger = Cuisine.create!(name: 'Hamburger', icon: 'A')
-cuisine_coffee = Cuisine.create!(name: 'Coffee', icon: 'B')
-cuisine_asian = Cuisine.create!(name: 'Asian', icon: 'D')
-cuisine_other = Cuisine.create!(name: 'Other', icon: 'F')
-cuisine_vegeterian = Cuisine.create!(name: 'Vegeterian', icon: 'H')
-cuisine_sushi = Cuisine.create!(name: 'Sushi', icon: 'I')
-cuisine_pizza = Cuisine.create!(name: 'Pizza', icon: 'L')
+cuisine_breakfast = Cuisine.create!(name: 'Breakfast', logo: '4')
+cuisine_salads = Cuisine.create!(name: 'Salads', logo: '5')
+cuisine_mexican = Cuisine.create!(name: 'Mexican', logo: '8')
+cuisine_hamburger = Cuisine.create!(name: 'Hamburger', logo: 'A')
+cuisine_coffee = Cuisine.create!(name: 'Coffee', logo: 'B')
+cuisine_asian = Cuisine.create!(name: 'Asian', logo: 'D')
+cuisine_other = Cuisine.create!(name: 'Other', logo: 'F')
+cuisine_vegeterian = Cuisine.create!(name: 'Vegeterian', logo: 'H')
+cuisine_sushi = Cuisine.create!(name: 'Sushi', logo: 'I')
+cuisine_pizza = Cuisine.create!(name: 'Pizza', logo: 'L')
 
-rest_arome = Restaurant.create!(
+rest_aroma = Restaurant.create!(
     name: 'Aroma',
     max_delivery_time: 10,
     cuisine_id: cuisine_coffee.id,
@@ -52,7 +52,7 @@ Restaurant.create!(
 
 Review.create!(
     reviewer_name: 'Avishai',
-    restaurant: rest_arome,
+    restaurant: rest_aroma,
     rating: 2,
     comment: "nice..."
 )
@@ -61,7 +61,7 @@ Review.create!(
     reviewer_name: 'Rona',
     restaurant: rest_herzog,
     rating: 3,
-    comment: "great..."
+    comment: "great!"
 )
 
 
