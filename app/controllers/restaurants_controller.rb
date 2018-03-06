@@ -1,10 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
-
-  # self.default_serializer = RestaurantSerializer
-
-
   # GET /restaurants
   # GET /restaurants.json
   def index
@@ -14,9 +10,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1
   # GET /restaurants/1.json
-  def show
-     # render json: @restaurants.to_json(methods: :get_rating)
-  end
+  def show; end
 
   # GET /restaurants/new
   def new
@@ -24,30 +18,26 @@ class RestaurantsController < ApplicationController
   end
 
   # GET /restaurants/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /restaurants
   # POST /restaurants.json
   def create
-
-
-    puts restaurant_params
+    Rails.logger.info restaurant_params
     cuisine = Cuisine.find(restaurant_params[:cuisine])
-        # Cuisine.find_by_name(restaurant_params[:cuisine])
     updated_restaurant_params = restaurant_params
     updated_restaurant_params[:cuisine] = cuisine
     @restaurant = Restaurant.new(updated_restaurant_params)
-    puts "Created new restaurant"
+    Rails.logger.info "Created new restaurant"
 
     respond_to do |format|
       if @restaurant.save
-        puts "Saved restaurant"
+        Rails.logger.info "Saved restaurant"
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
         format.json { render :show, status: :created, location: @restaurant }
       else
-        puts "Didn't save restaurant"
-        puts @restaurant.errors
+        Rails.logger.info "Didn't save restaurant"
+        Rails.logger.info @restaurant.errors
         format.html { render :new }
         format.json { render json: @restaurant.errors, status: :unprocessable_entity }
       end

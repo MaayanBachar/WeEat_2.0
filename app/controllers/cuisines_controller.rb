@@ -9,8 +9,7 @@ class CuisinesController < ApplicationController
 
   # GET /cuisines/1
   # GET /cuisines/1.json
-  def show
-  end
+  def show; end
 
   # GET /cuisines/new
   def new
@@ -18,8 +17,7 @@ class CuisinesController < ApplicationController
   end
 
   # GET /cuisines/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /cuisines
   # POST /cuisines.json

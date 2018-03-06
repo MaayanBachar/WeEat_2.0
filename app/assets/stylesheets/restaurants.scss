@@ -1,6 +1,7 @@
 // Place all the styles related to the Restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
 
 .rest {
   display: flex;
@@ -13,5 +14,18 @@
   border-width: medium;
   border: 5px solid;
   background-color: white;
-  border-color: floralwhite;
+  border-color: $primary-color;
 }
+
+//tenbis_logo {
+//  display: block;
+//  //-moz-box-sizing: border-box;
+//  //box-sizing: border-box;
+//  height: 40px;
+//  width: 40px;
+//  //padding-top: 250px;
+//  //overflow: hidden;
+//  //background: #333 url(https://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-10/images/footer-logo-shoptalk.png) no-repeat;
+//  background: url("/assets/tenbis_img.jpg") no-repeat;
+//
+//}

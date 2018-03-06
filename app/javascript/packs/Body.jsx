@@ -7,18 +7,12 @@ import Filters from './Filters'
 
 class Body extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            restaurants: [],
-            filterDeliveryTime: null,
-            filterCuisine: null,
-            filterMinimalRating: null
-        };
-        this.handleChangeDeliveryTime = this.handleChangeDeliveryTime.bind(this);
-        this.handleChangeCuisine = this.handleChangeCuisine.bind(this);
-        this.handleChangeMinimalRating = this.handleChangeMinimalRating.bind(this);
-    }
+    state = {
+        restaurants: [],
+        filterDeliveryTime: null,
+        filterCuisine: null,
+        filterMinimalRating: null
+    };
 
     componentWillMount() {
         fetch('http://localhost:3000/restaurants.json')
@@ -26,17 +20,17 @@ class Body extends React.Component {
             .then((restaurants) => this.setState({restaurants: restaurants}));
     }
 
-    handleChangeDeliveryTime(val) {
+    handleChangeDeliveryTime = (val) =>{
         this.setState({filterDeliveryTime: val});
-    }
+    };
 
-    handleChangeCuisine(val) {
+    handleChangeCuisine = (val) => {
         this.setState({filterCuisine: val});
-    }
+    };
 
-    handleChangeMinimalRating(val) {
+    handleChangeMinimalRating = (val) => {
         this.setState({filterMinimalRating: val});
-    }
+    };
 
     render() {
         let filteredRestList = this.state.restaurants;

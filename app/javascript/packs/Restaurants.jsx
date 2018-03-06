@@ -10,7 +10,7 @@ class Restaurants extends React.Component {
             <div>
                 { this.props.restaurants &&
                     <div className="rest">
-                        {this.props.restaurants.map(function (restaurant) {
+                        {this.props.restaurants.map((restaurant) => {
                             return <Restaurant key={restaurant.id} restaurant={restaurant}/>
 
                         })}

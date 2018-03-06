@@ -1,5 +1,3 @@
 class PagesController < ApplicationController
-  def index
-    # render inline: '', layout: 'application'
-  end
+  def index; end
 end

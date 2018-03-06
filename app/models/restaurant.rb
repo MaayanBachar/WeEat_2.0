@@ -14,14 +14,6 @@
 
 class Restaurant < ApplicationRecord
 
-  # before_validation :init_Tenbis
-  #
-  # def init_Tenbis
-  #   puts "here"
-  #   (tenbis != true) ? self.tenbis = false : self.tenbis
-  # end
-
-
   # A restaurant has many associated reviews.
   # Each review contains a reference to its restaurant's ID
   # The existence of reviews is dependent on the existence of the restaurant.
@@ -39,8 +31,8 @@ class Restaurant < ApplicationRecord
   # Validates that the maximum delivery time is between 0-100 minutes.
   validates :max_delivery_time, numericality: {greater_than_or_equal_to: 0}
 
-
   def get_rating
     reviews.size == 0 ? -1 : reviews.average(:rating).round
   end
 end
+

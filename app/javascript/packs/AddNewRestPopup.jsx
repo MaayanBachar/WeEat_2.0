@@ -1,46 +1,37 @@
 import React from 'react';
-import $ from 'jquery';
 
 class AddNewRestPopup extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            name: "",
-            address: "",
-            tenbis: false,
-            max_delivery_time: 10,
-            cuisine: ""
-        };
+    state = {
+        name: "",
+        address: "",
+        tenbis: false,
+        max_delivery_time: 10,
+        cuisine: ""
+    };
 
-        this.updateChange = this.updateChange.bind(this);
-        this.newRestaurantSubmit = this.newRestaurantSubmit.bind(this);
-    }
-
-    updateChange(e) {
-        const event_id = e.target.id;
+    updateChange= (e) => {
+        const eventId = e.target.id;
         const event_value = e.target.value;
 
-        if (event_id === "restaurant_name") {
+        if (eventId === "restaurant_name") {
             this.setState({name: event_value});
         }
-        else if (event_id === "restaurant_address") {
+        else if (eventId === "restaurant_address") {
             this.setState({address: event_value});
         }
-        else if (event_id === "restaurant_tenbis") {
+        else if (eventId === "restaurant_tenbis") {
             this.setState({tenbis: event_value});
         }
-        else if (event_id === "restaurant_maxDeliveryTime") {
+        else if (eventId === "restaurant_maxDeliveryTime") {
             this.setState({max_delivery_time: event_value});
         }
-        else if (event_id == "cuisine_id") {
+        else if (eventId == "cuisine_id") {
             this.setState({cuisine: event_value});
         }
-    }
+    };
 
-    newRestaurantSubmit(e) {
-        console.log("rest cuisine: " + this.state.cuisine);
-
+    newRestaurantSubmit = (e) => {
         fetch('/restaurants', {
             method: 'post',
             body: JSON.stringify({restaurant: {
@@ -59,7 +50,7 @@ class AddNewRestPopup extends React.Component {
             console.log("success!!!");
             console.log(response.status);
         });
-    }
+    };
 
     render() {
         return (
@@ -80,8 +71,12 @@ class AddNewRestPopup extends React.Component {
                                     <div className="row">
                                         <div className="col-xs-12 col-sm-10">
                                             <label>Restaurant name:</label>
-                                            <input id="restaurant_name" type="text" className="form-control"
-                                                    placeholder="Restaurant's name" value={this.state.name} onChange={this.updateChange}
+                                            <input id="restaurant_name"
+                                                   type="text"
+                                                   className="form-control"
+                                                   placeholder="Restaurant's name"
+                                                   value={this.state.name}
+                                                   onChange={this.updateChange}
                                                    />
                                         </div>
                                     </div>
@@ -106,20 +101,8 @@ class AddNewRestPopup extends React.Component {
                                     <div className="row">
                                         <div className="col-xs-12 col-sm-10">
                                             Max Delivery Time (in minutes):
-                                            <select id="restaurant_maxDeliveryTime" value={this.state.max_delivery_time} onChange={this.updateChange}>
-                                                <option value="10">10</option>
-                                                <option value="20">20</option>
-                                                <option value="30">30</option>
-                                                <option value="40">40</option>
-                                                <option value="50">50</option>
-                                                <option value="60">60</option>
-                                                <option value="70">70</option>
-                                                <option value="80">80</option>
-                                                <option value="90">90</option>
-                                                <option value="100">100</option>
-                                                <option value="110">110</option>
-                                                <option value="120">120</option>
-                                            </select>
+                                            <input id="restaurant_maxDeliveryTime" type="number" min={10} max={120} step={10}
+                                                   value={this.state.max_delivery_time} onChange={this.updateChange} required/>
                                         </div>
                                     </div>
 
@@ -137,7 +120,7 @@ class AddNewRestPopup extends React.Component {
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" className="btn btn-primary" onClick={this.newRestaurantSubmit}>Save changes</button>
+                                    <button type="button" className="btn btn-primary" onClick={this.newRestaurantSubmit} data-dismiss="modal">Save changes</button>
                                 </div>
                             </div>
                         </div>

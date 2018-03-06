@@ -9,8 +9,8 @@ class MyHeader extends React.Component {
         return (
             <div className="my_header">
                 <div className="header_text">
-                    <div className="main_title">WeEat!</div>
-                    <div className="subtitle">It's 12:00 and you are hungry.</div>
+                    <h1 className="main_title">WeEat!</h1>
+                    <h2 className="subtitle">It's 12:00 and you are hungry.</h2>
                     <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         Add New Restaurant
                     </button>

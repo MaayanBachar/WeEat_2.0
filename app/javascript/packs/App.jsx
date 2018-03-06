@@ -8,7 +8,6 @@ class App extends React.Component {
         super();
         this.state = {
             cuisines: []
-
         };
     }
 
@@ -19,18 +18,15 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(this.props.cuisines)
         return (
             <div className="app">
                 { this.state.cuisines &&
-                    <MyHeader cuisines = {this.state.cuisines}/>
+                    <MyHeader cuisines={this.state.cuisines}/>
                 }
-                <Body cuisines = {this.state.cuisines}/>
+                <Body cuisines={this.state.cuisines}/>
             </div>
         );
     }
 }
 
 export default App
-
-

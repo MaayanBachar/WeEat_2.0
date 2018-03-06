@@ -1,5 +1,7 @@
+@import 'variables';
+
 .body {
-  background-color: floralwhite;
+  background-color: $primary-color;
 }
 
 .map_and_rests {

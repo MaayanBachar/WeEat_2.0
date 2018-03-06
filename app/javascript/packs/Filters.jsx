@@ -16,7 +16,6 @@ class Filters extends React.Component {
         return (
             <div className="filters">
                 <div className="subtitle">Filter by...</div>
-
                 <div className="all_filters">
                     <div className="filter">
                         <div className="col-xs-12 col-sm-10">

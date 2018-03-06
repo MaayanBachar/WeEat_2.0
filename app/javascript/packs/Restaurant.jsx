@@ -9,6 +9,7 @@ class Restaurant extends React.Component {
         let tenbis = "";
         if (restaurant.tenbis) {
             tenbis = <img src="../../assets/tenbis_img.jpg" height="40" width="40"/>
+            // tenbis = <div class="tenbis_logo"></div>
         }
         return (
             <div className="restaurant">
@@ -26,6 +27,8 @@ class Restaurant extends React.Component {
 function Stars(numStars) {
     var stars = [];
     var numOfStars = numStars.val;
+
+    // stars.fill("<i key={i} className='fas fa-star'></i>", 0, numOfStars);
 
     for (var i = 0; i < numOfStars; i++) {
         stars.push(
