@@ -12,15 +12,6 @@ class App extends React.Component {
     }
 
     componentWillMount() {
-        // function myFetch(url, options) {
-        //     const finalUrl = IS_BROWSER ? url : `http://myservice.com/${url}`;
-        //     fetch(url, options);
-        // }
-
-
-
-        
-
         fetch('/cuisines.json')
             .then(response => response.json())
             .then((cuisines) => this.setState({cuisines: cuisines}))

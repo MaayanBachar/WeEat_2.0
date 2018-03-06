@@ -15,7 +15,7 @@ class Body extends React.Component {
     };
 
     componentWillMount() {
-        fetch('http://localhost:3000/restaurants.json')
+        fetch('/restaurants')
             .then(response => response.json())
             .then((restaurants) => this.setState({restaurants: restaurants}));
     }
