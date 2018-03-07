@@ -12,8 +12,6 @@ class Restaurant extends React.Component {
                 <div>Max delivery time: {restaurant.max_delivery_time}</div>
                 <div>Address: {restaurant.address}</div>
                 {restaurant.tenbis && restaurant.tenbis && <div className="tenbis_img" ></div> }
-
-
                 <div className="cuisine_font">{restaurant.cuisine.logo}</div>
                 <Stars val={restaurant.get_rating}/>
             </div>
@@ -24,8 +22,6 @@ class Restaurant extends React.Component {
 function Stars(numStars) {
     var stars = [];
     var numOfStars = numStars.val;
-
-    // stars.fill("<i key={i} className='fas fa-star'></i>", 0, numOfStars);
 
     for (var i = 0; i < numOfStars; i++) {
         stars.push(
