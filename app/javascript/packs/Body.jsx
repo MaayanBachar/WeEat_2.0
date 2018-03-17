@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types'
 import Restaurants from './Restaurants'
 import Map from './Map'
 import Filters from './Filters'
@@ -60,9 +58,7 @@ class Body extends React.Component {
                         <Restaurants restaurants = {filteredRestList}/>
                         }
                     </div>
-                    <div className="map">
-                        <Map/>
-                    </div>
+                    <Map />
                 </div>
             </div>
         );

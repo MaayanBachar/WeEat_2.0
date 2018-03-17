@@ -32,6 +32,7 @@ class AddNewRestPopup extends React.Component {
     };
 
     newRestaurantSubmit = (e) => {
+        const self = this;
         fetch('/restaurants', {
             method: 'post',
             body: JSON.stringify({restaurant: {
@@ -49,6 +50,13 @@ class AddNewRestPopup extends React.Component {
         }).then(function(response) {
             console.log("success!!!");
             console.log(response.status);
+            self.setState({
+                name: "",
+                address: "",
+                tenbis: false,
+                max_delivery_time: 10,
+                cuisine: ""
+            });
         });
     };
 
@@ -56,7 +64,6 @@ class AddNewRestPopup extends React.Component {
         return (
             <div className="popup">
                 <div>
-
                     <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div className="modal-dialog" role="document">
                             <div className="modal-content">
