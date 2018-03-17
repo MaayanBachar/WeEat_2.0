@@ -3,7 +3,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: image_url('rest-example.jpg');
+  background-image: image_url('restt2.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 0.85;
   padding: 7em;
 }
 
